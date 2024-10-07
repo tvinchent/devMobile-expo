@@ -1,9 +1,11 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, SafeAreaView, TextInput } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import MessageForm from '@/components/MessageForm';
+import Photo from '@/components/Photo';
 
 export default function HomeScreen() {
   return (
@@ -16,9 +18,13 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
+        <ThemedText type="title">SN2 App :o</ThemedText>
         <HelloWave />
       </ThemedView>
+      <SafeAreaView style={{ flex: 1 }}>
+      <MessageForm />
+    </SafeAreaView>
+    <Photo />
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
