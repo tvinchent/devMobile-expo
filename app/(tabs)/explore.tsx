@@ -6,13 +6,17 @@ import { ExternalLink } from '@/components/ExternalLink';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import Photo from '@/components/Photo';
+import { HelloWave } from '@/components/HelloWave';
 
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
-      headerImage={<Ionicons size={310} name="code-slash" style={styles.headerImage} />}>
-      <ThemedView style={styles.titleContainer}>
+      headerImage={ <Image source={require('@/assets/images/treasure.png')}/>}>
+        <ThemedText type="title" style={styles.title}>Avec caméra intégré</ThemedText>
+        <Photo />
+      {/* <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Explore</ThemedText>
       </ThemedView>
       <ThemedText>This app includes example code to help you get started.</ThemedText>
@@ -83,7 +87,7 @@ export default function TabTwoScreen() {
             </ThemedText>
           ),
         })}
-      </Collapsible>
+      </Collapsible> */}
     </ParallaxScrollView>
   );
 }
@@ -98,5 +102,10 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     gap: 8,
+  },
+  title : {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#ffcc00',
   },
 });

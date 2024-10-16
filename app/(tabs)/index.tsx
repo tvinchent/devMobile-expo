@@ -9,23 +9,20 @@ import Photo from '@/components/Photo';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
+    <ParallaxScrollView 
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
+        <Image source={require('@/assets/images/battle.webp')} style={styles.reactLogo} />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">SN2 App :o</ThemedText>
-        <HelloWave />
+                <HelloWave />
+        <ThemedText type="title" style={styles.title}>Chasse au trésor SN2 Mobile</ThemedText>
+
       </ThemedView>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={styles.innerText}>
       <MessageForm />
     </SafeAreaView>
-    <Photo />
-      <ThemedView style={styles.stepContainer}>
+      {/* <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
@@ -51,7 +48,7 @@ export default function HomeScreen() {
           <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
           <ThemedText type="defaultSemiBold">app-example</ThemedText>.
         </ThemedText>
-      </ThemedView>
+      </ThemedView> */}
     </ParallaxScrollView>
   );
 }
@@ -67,10 +64,19 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+    // height: 178,
+    // width: 290,
+    // bottom: 0,
+    // left: 0,
+    // position: 'absolute',
   },
+  title : {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#ffcc00',
+  },
+  innerText: {
+    color: '#ffcc00',
+    flex: 1,
+  }
 });

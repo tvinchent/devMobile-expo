@@ -28,12 +28,11 @@ const MessageForm = () => {
   return (
     <View style={{ padding: 20 }}>
       <Text>Enter your message:</Text>
-      <TextInput
-        value={message}
+      <textarea
         onChangeText={setMessage}
         placeholder="Type your message here..."
         style={{ borderWidth: 1, marginVertical: 10, padding: 10, borderRadius: 5 }}
-      />
+      >value={message}</textarea>
       <Button title="Save Message" onPress={handleSubmit} />
       {status ? <Text style={{ marginTop: 20 }}>{status}</Text> : null}
     </View>
